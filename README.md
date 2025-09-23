@@ -14,7 +14,5 @@ Originally developed for my **Autonomous Robot Car**, but built to be modular an
 ---
 
 ## 🛠 Tech Stack
-- **Mobile Platform:** (Java / Kotlin for Android OR Swift for iOS → whichever applies)  
-- **Communication:** Wi-Fi / Bluetooth (specify what you used)  
-- **Data Processing:** TensorFlow Lite / PyTorch Mobile (if integrated)  
-- **Backend (optional):** SQL / Python server (if you used one)  
+- **Mobile Platform:** Flutter (Dart)
+- **Communication:** Wi-Fi, Web-Server, and Web-Socket
