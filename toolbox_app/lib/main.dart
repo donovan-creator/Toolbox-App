@@ -88,9 +88,11 @@ class _RobotHomePageState extends State<RobotHomePage> {
 
       if (response.statusCode == 200) {
         final decoded = jsonDecode(response.body);
-        final action = decoded['action'] ?? 'stop';
-        setState(() => lastAction = action);
-        await http.get(Uri.parse('$espBaseUrl/$action')).timeout(const Duration(seconds: 2));
+        final action = decoded['action'];
+        if (action != null && action != 'none') {
+          setState(() => lastAction = action);
+          await http.get(Uri.parse('$espBaseUrl/$action')).timeout(const Duration(seconds: 2));
+        }
         debugPrint('RL Action Executed: $action');
       } else {
         debugPrint('Cloud server error: ${response.statusCode}');
